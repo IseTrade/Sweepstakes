@@ -9,7 +9,7 @@ namespace SweepstakesMarketing
     class Sweepstakes
     {
         private Dictionary<int, Contestant> dictRegisteredContestants;
-        private string name;
+        private string name; //This is name of sweepstake
         private int currentRegistrationNumber; //Generate ordered set of numbers
 
         /// A constructor which takes a string name for its input
@@ -48,7 +48,7 @@ namespace SweepstakesMarketing
         }
 
         /// A method to print a contestant object information
-        /// <param name="conestant"></param>
+        /// <param name="contestant"></param>
         public void PrintContestantInfo(Contestant contestant)
         {
             string contestantInfo;

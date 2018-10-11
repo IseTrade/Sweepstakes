@@ -8,9 +8,12 @@ namespace SweepstakesMarketing
 {
     class MarketingFirm : ISweepstakes
     {
-        public MarketingFirm()
+        SweepstakesStackManager stackSweepstakes;
+
+        public MarketingFirm() //Constructor
         {
             //TODO
+
         }
 
         /// A factory create method to determine how to handle the type of object passed
@@ -20,11 +23,15 @@ namespace SweepstakesMarketing
             switch (selection)
             {
                 case "1":
+                    
+                    
                 //TODO
                 case "2":
+                    
                 //TODO
-                default:
+                default:                   
                     throw new Exception("Unsupported data structure.");
+                    
             }
         }
     }

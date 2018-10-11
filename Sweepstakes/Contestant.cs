@@ -11,7 +11,7 @@ namespace SweepstakesMarketing
         public string firstName;
         public string lastName;
         public string emailAddress;
-        public string registrationNumber;
+        public int registrationNumber;
 
         public Contestant()
         {
@@ -23,7 +23,7 @@ namespace SweepstakesMarketing
         /// <param name="lastName"></param>
         /// <param name="emailAddress"></param>
         /// <param name="registrationNumber"></param>
-        public Contestant(string firstName, string lastName, string emailAddress, string registrationNumber)
+        public Contestant(string firstName, string lastName, string emailAddress, int registrationNumber)
         {
             this.firstName = firstName;
             this.lastName = lastName;
