@@ -8,41 +8,56 @@ namespace SweepstakesMarketing
 {
     class Sweepstakes
     {
-        /// <summary>
+        private Dictionary<int, Contestant> dictRegisteredContestants;
+        private string name;
+        private int currentRegistrationNumber; //Generate ordered set of numbers
+
         /// A constructor which takes a string name for its input
-        /// </summary>
         /// <param name="name"></param>
         public Sweepstakes(string name)
         {
-            //TODO
+            this.name = name;
         }
 
-        /// <summary>
         /// A method to register the contestant into the sweepstakes
-        /// </summary>
         /// <param name="contestant"></param>
         public void RegisterContestant(Contestant contestant)
         {
-            //TODO
+            currentRegistrationNumber += 1;//Increment the registration number
+            dictRegisteredContestants[contestant.ToString()[currentRegistrationNumber]].ToString();
         }
 
-        /// <summary>
+        internal void Enqueue(object sweepstakes)
+        {
+            throw new NotImplementedException();
+        }
+
         /// A method to pick a sweepstakes winner
-        /// </summary>
         /// <returns></returns>
         public string PickWinner()
         {
-            //TODO
-            return "";
+            string sweepStakesWinner = "";
+
+            //Pick an item from the dict object
+
+            //dictRegisteredContestants
+            //sweepStakesWinner = 
+
+            //Return a string that item from our registered contestants
+            return sweepStakesWinner;
         }
 
-        /// <summary>
         /// A method to print a contestant object information
-        /// </summary>
-        /// <param name="contestant"></param>
+        /// <param name="conestant"></param>
         public void PrintContestantInfo(Contestant contestant)
         {
-            //TODO
+            string contestantInfo;
+            //Build up a string with object information or implement ToString() for Contestant class
+            contestantInfo = "Name: " + contestant.firstName + " " + contestant.lastName + "\n";
+            contestantInfo = "E-mail: " + contestant.emailAddress + "\n"; //Valid e-mail address required for Bonus question
+            contestantInfo += "Registration Number: " + contestant.registrationNumber;
+
+            Console.WriteLine("\n" + contestantInfo + "\n");
         }
     }
 }
