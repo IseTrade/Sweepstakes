@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace SweepstakesMarketing
 {
+    /// <summary>
+    /// 
+    /// </summary>
     class Contestant
     {
         public string firstName;
@@ -13,22 +16,49 @@ namespace SweepstakesMarketing
         public string emailAddress;
         public int registrationNumber;
 
+        /// <summary>
+        /// 
+        /// </summary>
         public Contestant()
         {
-            //Default constructor
+            this.firstName = UserInterface.ShowPrompt("Enter contestant first name");
+            this.lastName = UserInterface.ShowPrompt("Enter contestant last name");
+            this.emailAddress = UserInterface.ShowPrompt("Enter contestant e-mail address");
+            //this.registrationNumber += registrationNumber + 1000;
+            this.registrationNumber = registrationNumber;
         }
 
-        /// An overloaded constructor to create a contestant with all its required class variables
-        /// <param name="firstName"></param>
-        /// <param name="lastName"></param>
-        /// <param name="emailAddress"></param>
-        /// <param name="registrationNumber"></param>
-        public Contestant(string firstName, string lastName, string emailAddress, int registrationNumber)
+        /// <summary>
+        /// Get Contestant First Name
+        /// </summary>
+        /// <returns></returns>
+        public string GetFirstName()
         {
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.emailAddress = emailAddress;
-            this.registrationNumber = registrationNumber;
+            return this.firstName;
+        }
+
+        /// <summary>
+        /// Get Contestant Last Name
+        /// </summary>
+        /// <returns></returns>
+        public string GetLastName()
+        {
+            return this.lastName;
+        }
+
+        //Get Contestant E-mail Address
+        public string GetEmailAddress()
+        {
+            return this.emailAddress;
+        }
+
+        /// <summary>
+        /// Get Contestant Registration Number
+        /// </summary>
+        /// <returns></returns>
+        public int GetRegistrationNumber()
+        {
+            return this.registrationNumber + 1;
         }
     }
 }

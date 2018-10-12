@@ -6,24 +6,26 @@ using System.Threading.Tasks;
 
 namespace SweepstakesMarketing
 {
-    /// A class that uses the Queue data structure
+    /// <summary>
+    /// A manager which will switch to the queue
+    /// </summary>
     class SweepstakesQueueManager : ISweepstakesManager
     {
-        private Queue<Sweepstakes> queueSweepstakes;
+        Queue<Sweepstake> sweepStakeDatabase;
 
-        /// A method which returns the queue sweepstakes object
-        /// <returns></returns>
-        public Sweepstakes GetSweepstakes()
+        public SweepstakesQueueManager()
         {
-            throw new NotImplementedException();
+            sweepStakeDatabase = new Queue<Sweepstake>();
         }
 
-        /// A method to insert a sweepstake object into the queue data structure
-        /// <param name="s"></param>
-        public void InsertSweepstakes(Sweepstakes s)
+        public void InsertSweepstakes(Sweepstake sweepstake)
         {
-            //First in first out
-            queueSweepstakes.Enqueue(s);
+            sweepStakeDatabase.Enqueue(sweepstake);
+        }
+
+        public Sweepstake GetSweepstake()
+        {
+            return sweepStakeDatabase.Dequeue();
         }
     }
 }

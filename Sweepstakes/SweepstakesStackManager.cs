@@ -6,24 +6,26 @@ using System.Threading.Tasks;
 
 namespace SweepstakesMarketing
 {
-    /// A class that uses the Stack data strucuture
+    /// <summary>
+    /// A manager which will switch to the stack
+    /// </summary>
     class SweepstakesStackManager : ISweepstakesManager
     {
-        private Stack<Sweepstakes> stackSweepstakes;
+        Stack<Sweepstake> sweepStakeDatabase;
 
-        /// Return an object of Sweepstakes
-        /// <returns></returns>
-        public Sweepstakes GetSweepstakes()
+        public SweepstakesStackManager()
         {
-            throw new NotImplementedException();
+            sweepStakeDatabase = new Stack<Sweepstake>();
         }
 
-        /// A method to insert the sweepstakes object into the stack data structure
-        /// <param name="s"></param>
-        public void InsertSweepstakes(Sweepstakes s)
+        public void InsertSweepstakes(Sweepstake sweepstake)
         {
-            //First in last out
-            stackSweepstakes.Push(s);
+            sweepStakeDatabase.Push(sweepstake);
+        }
+
+        public Sweepstake GetSweepstake()
+        {
+            return sweepStakeDatabase.Pop();
         }
     }
 }

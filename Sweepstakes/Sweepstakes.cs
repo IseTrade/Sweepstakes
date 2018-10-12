@@ -6,55 +6,87 @@ using System.Threading.Tasks;
 
 namespace SweepstakesMarketing
 {
-    class Sweepstakes
+    class Sweepstake
     {
-        private Dictionary<int, Contestant> dictRegisteredContestants;
-        private string name; //This is name of sweepstake
-        private int currentRegistrationNumber; //Generate ordered set of numbers
+        public string sweepstakeName;
+        Dictionary<int, Contestant> registeredSweepstakeContestants;
+        private Contestant contestantWinner;
 
-        /// A constructor which takes a string name for its input
-        /// <param name="name"></param>
-        public Sweepstakes(string name)
+        /// <summary>
+        /// An overloaded constructor to create a sweepstakes
+        /// </summary>
+        /// <param name="name">The name of the sweepstake</param>
+        public Sweepstake(string name)
         {
-            this.name = name;
+            this.sweepstakeName = name;
+            Contestant contestantWinner = new Contestant();
+            registeredSweepstakeContestants = new Dictionary<int, Contestant>();
         }
 
-        /// A method to register the contestant into the sweepstakes
+        /// <summary>
+        /// A data structure to store the sweepstakes
+        /// </summary>
+        /// <returns>A dict containing sweepstakes</returns>
+        public Dictionary<int, Contestant> GetSweepstakeContestants()
+        {
+            return this.registeredSweepstakeContestants;
+        }
+
+        /// <summary>
+        /// A method to get the sweepstake name
+        /// </summary>
+        /// <returns>The sweepstake name</returns>
+        public string GetSweepstakeName()
+        {
+            return this.sweepstakeName;
+        }
+
+        /// <summary>
+        /// A method to get the winning contestant
+        /// </summary>
+        /// <returns>The sweepstake winner contestant</returns>
+        public Contestant GetContestantWinner()
+        {
+            return this.contestantWinner;
+        }
+
+        /// <summary>
+        /// A method to register the contestant into the sweepstake contestant pool
+        /// </summary>
         /// <param name="contestant"></param>
         public void RegisterContestant(Contestant contestant)
         {
-            currentRegistrationNumber += 1;//Increment the registration number
-            dictRegisteredContestants[contestant.ToString()[currentRegistrationNumber]].ToString();
+            registeredSweepstakeContestants.Add(contestant.registrationNumber, contestant);
+            contestant.registrationNumber += 1;
+            UserInterface.ShowContestantAdded();
+            PrintContestantInfo(contestant);
         }
 
-        internal void Enqueue(object sweepstakes)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// A method to pick a sweepstakes winner
-        /// <returns></returns>
+        /// <summary>
+        /// A method to pick a sweepstake winner
+        /// </summary>
+        /// <returns>Return the e-mail address of the winner</returns>
         public string PickWinner()
         {
-            string sweepStakesWinner = "";
-
-            //Pick an item from the dict object
-
-            //dictRegisteredContestants
-            //sweepStakesWinner = 
-
-            //Return a string that item from our registered contestants
-            return sweepStakesWinner;
+            string sweepStakeWinner = "";
+            //Pick a random contestant from the registered contestants
+            Random randomWinner = new Random();
+            int randomContestantNumber = randomWinner.Next(1, registeredSweepstakeContestants.Count);
+            Contestant contestantWinner = registeredSweepstakeContestants[randomContestantNumber];
+            sweepStakeWinner = registeredSweepstakeContestants[randomContestantNumber].emailAddress;
+            return sweepStakeWinner;
         }
 
+        /// <summary>
         /// A method to print a contestant object information
+        /// </summary>
         /// <param name="contestant"></param>
         public void PrintContestantInfo(Contestant contestant)
         {
             string contestantInfo;
             //Build up a string with object information or implement ToString() for Contestant class
             contestantInfo = "Name: " + contestant.firstName + " " + contestant.lastName + "\n";
-            contestantInfo = "E-mail: " + contestant.emailAddress + "\n"; //Valid e-mail address required for Bonus question
+            contestantInfo = "E-mail: " + contestant.emailAddress + "\n";
             contestantInfo += "Registration Number: " + contestant.registrationNumber;
 
             Console.WriteLine("\n" + contestantInfo + "\n");
