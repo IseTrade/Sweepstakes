@@ -24,8 +24,7 @@ namespace SweepstakesMarketing
             this.firstName = UserInterface.ShowPrompt("Enter contestant first name");
             this.lastName = UserInterface.ShowPrompt("Enter contestant last name");
             this.emailAddress = UserInterface.ShowPrompt("Enter contestant e-mail address");
-            //this.registrationNumber += registrationNumber + 1000;
-            //this.registrationNumber = registrationNumber;
+            //this.registrationNumber += registrationNumber + 1000;          
         }
 
         /// <summary>
@@ -58,7 +57,7 @@ namespace SweepstakesMarketing
         /// <returns></returns>
         public int GetRegistrationNumber()
         {
-            return this.registrationNumber + 1;
+            return this.registrationNumber;
         }
     }
 }
