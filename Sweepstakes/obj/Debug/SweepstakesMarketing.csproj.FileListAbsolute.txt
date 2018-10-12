@@ -1,7 +1,7 @@
-C:\Users\Owner\source\repos\Sweepstakes\Sweepstakes\obj\Debug\SweepstakesMarketing.csprojAssemblyReference.cache
-C:\Users\Owner\source\repos\Sweepstakes\Sweepstakes\obj\Debug\SweepstakesMarketing.csproj.CoreCompileInputs.cache
 C:\Users\Owner\source\repos\Sweepstakes\Sweepstakes\bin\Debug\Sweepstakes.exe.config
 C:\Users\Owner\source\repos\Sweepstakes\Sweepstakes\bin\Debug\Sweepstakes.exe
 C:\Users\Owner\source\repos\Sweepstakes\Sweepstakes\bin\Debug\Sweepstakes.pdb
+C:\Users\Owner\source\repos\Sweepstakes\Sweepstakes\obj\Debug\SweepstakesMarketing.csprojAssemblyReference.cache
+C:\Users\Owner\source\repos\Sweepstakes\Sweepstakes\obj\Debug\SweepstakesMarketing.csproj.CoreCompileInputs.cache
 C:\Users\Owner\source\repos\Sweepstakes\Sweepstakes\obj\Debug\Sweepstakes.exe
 C:\Users\Owner\source\repos\Sweepstakes\Sweepstakes\obj\Debug\Sweepstakes.pdb

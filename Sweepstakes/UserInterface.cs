@@ -15,7 +15,7 @@ namespace SweepstakesMarketing
         {
             Console.WriteLine("Sweepstakes Manager Program!");
             Console.WriteLine("============================\n");
-            Console.WriteLine("Choose an option to create a new sweapstakes:\n");
+            Console.WriteLine("Choose an option to create a new sweepstakes:\n");
             Console.WriteLine("1 - Create a Stack Sweepstakes");
             Console.WriteLine("2 - Create a Queue Sweepstakes\n");
         }

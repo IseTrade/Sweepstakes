@@ -11,6 +11,7 @@ namespace SweepstakesMarketing
         public string sweepstakeName;
         Dictionary<int, Contestant> registeredSweepstakeContestants;
         private Contestant contestantWinner;
+        private int contestantCounter;
 
         /// <summary>
         /// An overloaded constructor to create a sweepstakes
@@ -19,8 +20,9 @@ namespace SweepstakesMarketing
         public Sweepstake(string name)
         {
             this.sweepstakeName = name;
-            Contestant contestantWinner = new Contestant();
+            //contestantWinner = new Contestant();
             registeredSweepstakeContestants = new Dictionary<int, Contestant>();
+            contestantCounter = 1;
         }
 
         /// <summary>
@@ -56,8 +58,9 @@ namespace SweepstakesMarketing
         /// <param name="contestant"></param>
         public void RegisterContestant(Contestant contestant)
         {
+            contestant.registrationNumber = contestantCounter;
             registeredSweepstakeContestants.Add(contestant.registrationNumber, contestant);
-            contestant.registrationNumber += 1;
+            contestantCounter++;
             UserInterface.ShowContestantAdded();
             PrintContestantInfo(contestant);
         }
@@ -72,7 +75,7 @@ namespace SweepstakesMarketing
             //Pick a random contestant from the registered contestants
             Random randomWinner = new Random();
             int randomContestantNumber = randomWinner.Next(1, registeredSweepstakeContestants.Count);
-            Contestant contestantWinner = registeredSweepstakeContestants[randomContestantNumber];
+            contestantWinner = registeredSweepstakeContestants[randomContestantNumber];
             sweepStakeWinner = registeredSweepstakeContestants[randomContestantNumber].emailAddress;
             return sweepStakeWinner;
         }
